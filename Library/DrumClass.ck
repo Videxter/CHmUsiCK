@@ -20,37 +20,37 @@ public class Drum extends Chmusick
     SndBuf Kick[8]; SndBuf Snare[12]; SndBuf HH[9];
     
     //--------samples for bass drum------//
-    me.dir() + "/Drum Kits/Electronica/Kick_Electronica (1).wav" => Kick[0].read;
-	me.dir() + "/Drum Kits/Electronica/Kick_Electronica (2).wav" => Kick[1].read; 
-    me.dir() + "/Drum Kits/Electronica/Kick_Electronica (3).wav" => Kick[2].read; 
-    me.dir() + "/Drum Kits/Hip Hop/Kick (1).wav" => Kick[3].read;
+    me.dir() + "/Drum Kits/Drums/MDA/kick/Anlg_Kick.wav" => Kick[0].read;
+	me.dir() + "/Drum Kits/Drums/MDA/kick/kick_01.wav" => Kick[1].read; 
+    me.dir() + "/Drum Kits/Drums/MDA/kick/kick_04.wav" => Kick[2].read; 
+    me.dir() + "/Drum Kits/sonidos/kick/kk3.wav" => Kick[3].read;
     me.dir() + "/Drum Kits/Hip Hop/Kick (2).wav" => Kick[4].read;
     me.dir() + "/Drum Kits/Hip Hop/Kick (3).wav" => Kick[5].read;
     me.dir() + "/Drum Kits/Vintage Drum/kick a.wav" => Kick[6].read;
     me.dir() + "/Drum Kits/Vintage Drum/kick b.wav" => Kick[7].read;
 	//??????samples for snare drum?????//
-    me.dir() + "/Drum Kits/Electronica/Claps and Snare_Electronica (1).wav" => Snare[0].read;
-    me.dir() + "/Drum Kits/Electronica/Claps and Snare_Electronica (2).wav" => Snare[1].read;
-    me.dir() + "/Drum Kits/Electronica/Claps and Snare_Electronica (3).wav" => Snare[2].read;
-    me.dir() + "/Drum Kits/Electronica/Claps_Electronica (1).wav"=> Snare[3].read;
-    me.dir() + "/Drum Kits/Electronica/Claps_Electronica (2).wav"=> Snare[4].read;
-    me.dir() + "/Drum Kits/Electronica/Claps_Electronica (3).wav"=> Snare[5].read;
-    me.dir() + "/Drum Kits/Hip Hop/Snare - Clap (1).wav" => Snare[6].read;
+    me.dir() + "/Drum Kits/Drums/MDA/Snare/snare_01.wav" => Snare[0].read;
+    me.dir() + "/Drum Kits/Drums/MDA/Snare/snare_02.wav" => Snare[1].read;
+    me.dir() + "/Drum Kits/Drums/MDA/Snare/clap_01.wav" => Snare[2].read;
+    me.dir() + "/Drum Kits/Drums/MDA/Snare/Verhoeven-38.wav"=> Snare[3].read;
+    me.dir() + "/Drum Kits/sonidos/clap/cl4.wav"=> Snare[4].read;
+    me.dir() + "/Drum Kits/sonidos/clap/cl5.wav"=> Snare[5].read;
+    me.dir() + "/Drum Kits/sonidos/clap/cl6.wav" => Snare[6].read;
     me.dir() + "/Drum Kits/Hip Hop/Snare - Clap (2).wav" => Snare[7].read;
     me.dir() + "/Drum Kits/Hip Hop/Snare - Clap (3).wav" => Snare[8].read;
     me.dir() + "/Drum Kits/Hip Hop/Snare - Clap (4).wav" => Snare[9].read;
     me.dir() + "/Drum Kits/Vintage Drum/snare a.wav" => Snare[10].read;
     me.dir() + "/Drum Kits/Vintage Drum/snare b.wav" => Snare[11].read;
     //??????sample for hhSounds?????????//
-    me.dir() + "/Drum Kits/Electronica/Hit_Hat_Electronica (1).wav" => HH[0].read;
-    me.dir() + "/Drum Kits/Electronica/Hit_Hat_Electronica (2).wav" => HH[1].read;
-    me.dir() + "/Drum Kits/Electronica/Hit_Hat_Electronica (3).wav" => HH[2].read;
-    me.dir() + "/Drum Kits/Hip Hop/Hihat - Shaker (1).wav" => HH[3].read;
-    me.dir() + "/Drum Kits/Hip Hop/Hihat - Shaker (2).wav" => HH[4].read;
-    me.dir() + "/Drum Kits/Hip Hop/Hihat - Shaker (3).wav" => HH[5].read;
-    me.dir() + "/Drum Kits/Hip Hop/Hihat (1).wav" => HH[6].read;
+    me.dir() + "/Drum Kits/Drums/MDA/HH/Ac_OH_2.wav" => HH[0].read;
+    me.dir() + "/Drum Kits/Drums/MDA/HH/Ac_OH_9.wav" => HH[1].read;
+    me.dir() + "/Drum Kits/Drums/MDA/HH/Anlg_CH.wav" => HH[2].read;
+    me.dir() + "/Drum Kits/Drums/MDA/HH/Anlg_Perc1.wav" => HH[3].read;
+    me.dir() + "/Drum Kits/Drums/MDA/HH/hihat_01.wav" => HH[4].read;
+    me.dir() + "/Drum Kits/Drums/MDA/HH/hihat_02.wav" => HH[5].read;
+    me.dir() + "/Drum Kits/Drums/MDA/HH/hihat_03.wav" => HH[6].read;
     me.dir() + "/Drum Kits/Hip Hop/Hihat (2).wav" => HH[7].read;
-    me.dir() + "/Drum Kits/Hip Hop/Hihat (3).wav" => HH[8].read;
+    me.dir() + "/Drum Kits/Drums/MDA/HH/hihat_03.wav" => HH[8].read;
 	
     for(0 => int i; i < Kick.cap(); i++)
     {
@@ -470,7 +470,8 @@ public class Drum extends Chmusick
                 if (k[i] == 1)
                 {
                     0 => Kick[bdSound].pos;
-					Math.random2f(0.5,1) => Kick[bdSound].gain;
+                    // ACENTOS
+					//Math.random2f(0.9,1) => Kick[bdSound].gain;
                 }
                 Dur(convert(TEMPO),Division) => now;
             }
@@ -522,7 +523,7 @@ public class Drum extends Chmusick
                 if (hh[i] == 1)
                 {
                     0 => HH[hhSound].pos;
-					Math.random2f(0.5,1) => HH[hhSound].gain;
+					//Math.random2f(0.5,1) => HH[hhSound].gain;
                 }
                 Dur(convert(TEMPO),Division) => now;
             }
@@ -542,7 +543,7 @@ public class Drum extends Chmusick
                 if (hh[i] == 1)
                 {
                     0 => HH[hhSound].pos;
-					Math.random2f(0.5,1) => HH[hhSound].gain;
+					//Math.random2f(0.5,1) => HH[hhSound].gain;
                 }
                 Dur(convert(TEMPO),Division) => now;
             }
@@ -567,7 +568,7 @@ public class Drum extends Chmusick
                 if (sn[i] == 1)
                 {
                     0 => Snare[snSound].pos;
-					Math.random2f(0.5,1) => Snare[snSound].gain;
+					//Math.random2f(0.5,1) => Snare[snSound].gain;
                 }
                 Dur(convert(TEMPO),Division) => now;
             } 
@@ -587,7 +588,7 @@ public class Drum extends Chmusick
                 if (sn[i] == 1)
                 {
                     0 => Snare[snSound].pos;
-					Math.random2f(0.5,1) => Snare[snSound].gain;
+					//Math.random2f(0.5,1) => Snare[snSound].gain;
                 }
                 Dur(convert(TEMPO),Division) => now;
             }
