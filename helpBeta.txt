@@ -1,0 +1,104 @@
+Chmusick.ck 
+
+Obj.tempo(float);
+	funcion para contrar la velocidad del bpm.
+
+Obj.cycles(int);
+	alarga la duracion del compas.
+
+ 
+spork~Obj.reverse(int[]);
+		(int[]); : Array de enteros en formato midi.
+		([ 50 , 60 ]) : invierte la melodia.
+
+DrumClass.ck
+
+Obj.BDSound(int);
+	cambia los samples para el Bass Drum(Kick).
+	rango 0 - 7.
+
+Obj.SNSound(int);
+	cambia los samples para el Snare.
+	rango 0 - 11.
+
+Obj.HHSound(int);
+	cambia los samples para el Hit-Hat.		
+	rango 0 - 8.
+
+Obj.bdGain(float);
+	cambia el volumen del Bass Drum(kick).
+
+Obj.snGain(float);
+	cambia el volumen del Snare.
+
+Obj.hhGain(float);
+	cambia el volumen del Hit-Hat.
+
+Obj.gain(float);
+	cambia el volumen general para el objeto Drum.
+
+spork~Obj.drum(int[],int[],int[]);
+	(int[],int[],int[]): Arrays de 0(Off) y 1(On).
+	([ 1 , 0 ],[ 0 , 1 ],[ 0 , 1 ]) : base drum.
+
+spork.Obj.drumF(int[],int[],int[]);					(int[],int[],int[]): Arrays de 0(Off) y 1(On).
+	([ 1 , 0 ],[ 0 , 1 ],[ 0 , 1 ]) : base drum con fills
+
+HarmonyClass.
+
+Obj.gain(float);
+	volumen general para el objeto harmony.
+
+spork~Obj.sinOsc(string[]);
+	(string[]); : Array con notas en notacion americana
+	([ "C" , "A" ]); hace acordes con ondas senosoidales.
+
+spork~Obj.triOsc(string[]);
+	(string[]); : Array con notas en notacion americana
+	([ "C" , "A" ]); hace acordes con ondas triangulares.
+
+spork~Obj.sqrOsc(string[]);
+	(string[]); : Array con notas en notacion americana
+	([ "C" , "A" ]); hace acordes con ondas cuadradas.
+
+spork~Obj.sawOsc(string[]);
+	(string[]); : Array con notas en notacion americana
+	([ "C" , "A" ]); hace acordes con ondas cierra.
+
+spork~Obj.pulseOsc(string[]);
+	(string[]); : Array con notas en notacion americana
+	([ "C" , "A" ]); hace acordes con ondas ????.
+
+Nota : los metodos anteriores tambien reciben un parametro extra
+	entero el cual indica el numero de voces(ondas) del acorde.
+	spork~Obj.pulseOsc(string[],int);
+
+MelodyClass.
+
+Obj.gain(float);
+	Cambia el volumen general para el objeto Melody.
+
+Obj.controlChange(int);
+	Cambia la sintesis para el metodo spork~Obj.synth(int[]);
+	rango 0 , 17.
+
+spork~Obj.synth(int[]);
+	lee el array de notas midi con la sintesis del
+	metodo Obj.controlChange(int);
+
+Obj.controlChangeOsc(int);
+	Cambia la sintesis para el metodo spork~Obj.synthOsc(int[]);
+	rango 0 , 4.		
+
+spork~Obj.synthOsc(int[]);
+	lee el array de notas midi con la sintesis del
+	metodo Obj.controlChangeOsc(int);
+
+FMSynthClass
+
+???
+
+
+
+
+			
